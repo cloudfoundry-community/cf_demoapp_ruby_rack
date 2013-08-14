@@ -43,3 +43,18 @@ OK
 $ curl hello.mypaas.com
 Hello World!
 ```
+
+
+
+Note about proxy configuration :
+
+ you could adapt the push :
+```
+  cf --http-proxy http://myproxy.myproxydomain:8080 --https-proxy http://myproxy.myproxydomain:8080 push
+```
+ and change the manifest.yml by appending this lines :
+```
+   env:
+    HTTP_PROXY: myproxy.myproxydomain:8080
+    HTTPS_PROXY: myproxy.myproxydomain:8080
+```
